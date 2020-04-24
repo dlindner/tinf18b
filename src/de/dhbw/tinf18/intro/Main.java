@@ -1,7 +1,6 @@
 package de.dhbw.tinf18.intro;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.stream.Stream;
 
 public final class Main {
 	
@@ -16,12 +15,11 @@ public final class Main {
 		final Youtube öffentlicheDienst = new Youtube();
 		öffentlicheDienst.veröffentliche();
 		
-		final List<Streamingdienst> dienste = Arrays.asList(
-			dhbwDienst,
-			öffentlicheDienst
-		);
-		for (final Streamingdienst each : dienste) {
-			each.veröffentliche();
-		}
+		Stream.of(
+				dhbwDienst,
+				öffentlicheDienst
+			)
+			.sorted()
+			.forEach(Streamingdienst::veröffentliche);
 	}
 }
