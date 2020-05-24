@@ -1,9 +1,13 @@
 package de.dhbw.tinf18.streams;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import de.dhbw.tinf18.streams.functional.playground.book.creation.BookShelf;
 
 public class Folienbeispiele {
 	
@@ -80,7 +84,17 @@ Optional<Integer> summe =
 		.reduce((zahl1, zahl2) -> zahl1 + zahl2);
 System.out.println(summe);
 
+BookShelf.asStream(new Random())
+	.filter(book -> book.publicationDate().isBefore(LocalDate.of(1989, 11, 9)))
+	.map(book -> book.title())
+	.limit(10)
+	.reduce("", (title1, title2) -> (title1.isEmpty()) ? title2 : title1 + ", " + title2);
 
+BookShelf.asStream(new Random())
+	.filter(book -> book.publicationDate().isBefore(LocalDate.of(1989, 11, 9)))
+	.map(book -> book.title())
+	.limit(10)
+	.collect(Collectors.joining(", "));
 
 	}
 	

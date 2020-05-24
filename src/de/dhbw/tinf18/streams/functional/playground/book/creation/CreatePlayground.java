@@ -30,8 +30,7 @@ public final class CreatePlayground {
 //			}
 //		}
 		System.out.println("no book data found, creating new books (might take a while).");
-		final List<Book> allBooks = Stream
-				.generate(() -> Book.createWith(random))
+		final List<Book> allBooks = BookShelf.asStream(random)
 				.limit(amountOfBooks)
 				.collect(Collectors.toList());
 		System.out.println(allBooks.size() + " books created in " + ((System.nanoTime() - start) / 1_000_000) + " ms.");
@@ -44,4 +43,5 @@ public final class CreatePlayground {
 //		System.out.println(allBooks.size() + " books written");
 		return allBooks;
 	}
+	
 }
