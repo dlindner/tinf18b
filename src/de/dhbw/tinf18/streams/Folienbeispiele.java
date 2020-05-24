@@ -1,6 +1,7 @@
 package de.dhbw.tinf18.streams;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -63,6 +64,23 @@ Stream.generate(() -> Math.random())
 Stream.generate(Math::random)
 	.limit(1000)
 	.forEach(System.out::println);
+
+List<Long> ergebnis = 
+	Stream.generate(Math::random)
+	    .map(number -> number * 100.0D)
+	    .map(Math::round)
+	    .filter(number -> number % 2 == 0)
+		.limit(10)
+		.collect(Collectors.toList());
+System.out.println(ergebnis);
+
+Optional<Integer> summe = 
+	Stream.iterate(1, zähler -> zähler + 1)
+		.limit(100)
+		.reduce((zahl1, zahl2) -> zahl1 + zahl2);
+System.out.println(summe);
+
+
 
 	}
 	
