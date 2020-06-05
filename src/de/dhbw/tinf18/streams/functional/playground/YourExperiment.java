@@ -18,8 +18,11 @@ public class YourExperiment {
 	public static void main(String[] args) throws Exception {
 		final Stream<Book> allBooks = CreatePlayground.withBooks(amountOfBooks, random).stream();
 		
-		Stream<List<Chapter>> chapters = allBooks.map(book -> book.content());
-		IntStream bookPages = chapters.mapToInt(listOfChapters -> listOfChapters.stream().mapToInt(Chapter::pages).sum());
-		System.out.println("--> " + bookPages.peek(System.out::println).average());
+		long start = System.nanoTime();
+		System.out.println("--> " + allBooks
+				.map(book -> book.content())
+				.mapToInt(listOfChapters -> listOfChapters.stream().mapToInt(Chapter::pages).sum())
+				.average());
+		System.out.println((System.nanoTime() - start) / 1E6);
 	}
 }
