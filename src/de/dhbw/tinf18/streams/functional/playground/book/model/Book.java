@@ -12,6 +12,7 @@ import de.dhbw.tinf18.streams.functional.playground.book.creation.BookTitles;
 public class Book implements Serializable {
 
 	private static final long serialVersionUID = 8653655840507968813L;
+	
 	private final Author author;
 	private final String title;
 	private final ISBN isbn;

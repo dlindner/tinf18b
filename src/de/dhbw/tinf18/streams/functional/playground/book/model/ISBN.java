@@ -9,6 +9,7 @@ import de.dhbw.tinf18.streams.functional.playground.book.creation.ISBNs;
 public class ISBN implements Serializable {
 
 	private static final long serialVersionUID = 5681084304860620535L;
+	
 	private final String representation;
 
 	public ISBN(String representation) {

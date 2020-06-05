@@ -9,6 +9,7 @@ import de.dhbw.tinf18.streams.functional.playground.book.creation.AuthorNames;
 public class Author implements Serializable {
 
 	private static final long serialVersionUID = -2510434872112920201L;
+	
 	private final String name;
 
 	public Author(String name) {
