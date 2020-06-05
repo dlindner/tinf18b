@@ -20,11 +20,6 @@ public class YourExperiment {
 		
 		Stream<List<Chapter>> chapters = allBooks.map(book -> book.content());
 		IntStream bookPages = chapters.mapToInt(listOfChapters -> listOfChapters.stream().mapToInt(Chapter::pages).sum());
-		System.out.println(bookPages.average());
-		
-//		Stream<Chapter> allChapters = chapters.flatMap(List::stream);
-//		IntStream allPages = allChapters.mapToInt(Chapter::pages);
-//		OptionalDouble average = allPages.average();
-//		System.out.println(average);
+		System.out.println("--> " + bookPages.peek(System.out::println).average());
 	}
 }
