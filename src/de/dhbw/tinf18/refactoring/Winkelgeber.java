@@ -48,10 +48,17 @@ public class Winkelgeber {
 		return Optional.empty();
 	}
 	
-	public Optional<Integer> gibWinkel_OptionalAndException() throws SensorException {
+	public Optional<Integer> gibWinkel_OptionalAndCheckedException() throws SensorException {
 		if (sensor.funktioniert()) {
 			return Optional.ofNullable(sensor.winkel());
 		}
 		throw new SensorException();
+	}
+	
+	public Optional<Integer> gibWinkel_OptionalAndUncheckedException() {
+		if (sensor.funktioniert()) {
+			return Optional.ofNullable(sensor.winkel());
+		}
+		throw new RuntimeException();
 	}
 }
