@@ -1,5 +1,9 @@
 package de.dhbw.tinf18.refactoring;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Optional;
 
 public class Winkelgeber {
@@ -9,6 +13,16 @@ public class Winkelgeber {
 	public Winkelgeber(Winkelsensor sensor) {
 		super();
 		this.sensor = sensor;
+	}
+	
+	public int readout() throws IOException {
+		// try-with-resources
+		try (
+			FileInputStream input = new FileInputStream(new File("test.txt"));
+		) {
+			int result = input.read();
+			return result;
+		}
 	}
 	
 	public int gibWinkel_ErrorCode() {
