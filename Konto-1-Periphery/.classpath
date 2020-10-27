@@ -6,6 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Konto-Application"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Konto-2-Application"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

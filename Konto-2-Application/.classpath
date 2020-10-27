@@ -6,6 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Konto-Domain"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Konto-3-Domain"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
