@@ -1,10 +1,16 @@
 package de.dhbw.tinf18.pattern.design;
 
-public enum RealSingleton {
+import java.util.concurrent.Callable;
+
+public enum RealSingleton implements Callable<RealSingleton> {
 
 	instance(132);
 	
 	private int counter;
+	
+	public static RealSingleton getInstance() {
+		return instance;
+	}
 	
 	private RealSingleton(int anfangsstand) {
 		// geht nicht!
@@ -14,5 +20,10 @@ public enum RealSingleton {
 	
 	public int getCounter() {
 		return this.counter;
+	}
+	
+	@Override
+	public RealSingleton call() throws Exception {
+		return null;
 	}
 }

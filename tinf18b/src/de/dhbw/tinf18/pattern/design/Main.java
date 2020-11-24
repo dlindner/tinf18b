@@ -23,6 +23,8 @@ public class Main {
 		
 		RealSingleton[] values = RealSingleton.values();
 		
+		RealSingleton mySingleton = RealSingleton.getInstance();
+		
 //		LazySingleton eins = LazySingleton.getInstance();
 //		LazySingleton zwei = LazySingleton.getInstance();
 //		System.out.println(eins == zwei);
