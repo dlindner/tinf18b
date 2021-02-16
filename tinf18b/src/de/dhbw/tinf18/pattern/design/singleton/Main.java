@@ -1,4 +1,4 @@
-package de.dhbw.tinf18.pattern.design;
+package de.dhbw.tinf18.pattern.design.singleton;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;

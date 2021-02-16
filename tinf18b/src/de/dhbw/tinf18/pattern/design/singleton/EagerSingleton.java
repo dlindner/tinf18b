@@ -1,4 +1,4 @@
-package de.dhbw.tinf18.pattern.design;
+package de.dhbw.tinf18.pattern.design.singleton;
 
 public final class EagerSingleton {
 
