@@ -1,5 +1,7 @@
 package de.dhbw.tinf18.pattern.design.erbauer;
 
+import java.util.Optional;
+
 public class Konto {
 	
 	private final Inhaber inhaber;
@@ -9,7 +11,20 @@ public class Konto {
 	private final Prämie prämie;
 	private final Verwahrungsgeld strafzins;
 
-	public Konto(
+//	public static Optional<Konto> erstelle(Inhaber inhaber,
+//			Überziehungsrahmen dispo,
+//			Überziehzins dispozins,
+//			Kontoführungsgebühren gebühren,
+//			Prämie prämie,
+//			Verwahrungsgeld strafzins) {
+//		if (Prämie.keine != prämie) {
+//			// FAIL!
+//			return Optional.empty();
+//		}
+//		return Optional.of(new Konto(inhaber, dispo, dispozins, gebühren, prämie, strafzins));
+//	}
+	
+	protected Konto(
 			Inhaber inhaber,
 			Überziehungsrahmen dispo,
 			Überziehzins dispozins,
